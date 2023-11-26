@@ -1,0 +1,58 @@
+html {
+  scroll-behavior: smooth;
+}
+
+ul {
+  display: flex;
+  list-style: none;
+}
+.navbar-brand {
+  font-size: 25px;
+  font-weight: 500;
+}
+.navbar {
+  box-shadow: var(--box-shadow);
+}
+nav li {
+  border: none;
+  display: inline-block;
+  padding-right: 5px;
+  transition: all linear 0.5s;
+  margin-right: 20px;
+  font-size: 18px;
+}
+nav li a {
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+  padding-right: 5px;
+}
+ul li {
+  cursor: pointer;
+  position: relative;
+}
+li.active::after {
+  position: absolute;
+  content: '';
+  height: 6px;
+  width: 100%;
+  background-color: #ff105e;
+  left: 0;
+  bottom: -7px;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  animation: appear 0.2s linear;
+}
+@keyframes appear {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 991.98px) {
+  li.active::after {
+    width: 30%;
+  }
+}
